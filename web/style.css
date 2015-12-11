@@ -1,0 +1,683 @@
+
+/*******************
+SELECTION STYLING
+*******************/
+
+::selection {
+	color: #fff;
+	background: #f676b2; /* Safari */
+}
+::-moz-selection {
+	color: #fff;
+	background: #f676b2; /* Firefox */
+}
+
+/*******************
+BODY STYLING
+*******************/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+body {
+//	background: url(img/bg.png);
+	font-family: Arial, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:300;
+	text-align: left;
+	text-decoration: none;
+}
+
+.body-login {
+	background: url(img/bg.png);
+	font-family: Arial, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:300;
+	text-align: left;
+	text-decoration: none;
+	height: 500px;
+}
+
+#wrapper {
+	/* Center wrapper perfectly */
+	width: 300px;
+	height: 400px;
+	margin: 220px auto;
+}
+
+.gradient {
+	/* Center Positioning */
+	width: 600px;
+	height: 600px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -300px;
+	margin-top: -300px;
+	z-index: -2;
+	
+	/* Fallback */ 
+	background-image: url(img/grad.png); 
+	background-repeat: no-repeat; 
+	
+	/* CSS3 Gradient */
+	background-image: -webkit-gradient(radial, 0% 0%, 0% 100%, from(rgba(213,246,255,1)), to(rgba(213,246,255,0)));
+	background-image: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(213,246,255,1), rgba(213,246,255,0));
+	background-image: -moz-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+	background-image: -ms-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+	background-image: -o-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
+}
+
+/*******************
+LOGIN FORM
+*******************/
+
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	
+	background: #f3f3f3;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/*******************
+HEADER
+*******************/
+
+.login-form .header {
+	padding: 40px 30px 30px 30px;
+}
+
+.login-form .header h1 {
+	font-family: Arial, serif;
+	font-weight: 300;
+	font-size: 28px;
+	line-height:34px;
+	color: #414848;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+	margin-bottom: 10px;
+}
+
+.login-form .header span {
+	font-size: 11px;
+	line-height: 16px;
+	color: #678889;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+}
+
+/*******************
+CONTENT
+*******************/
+
+.login-form .content {
+	padding: 0 30px 25px 30px;
+}
+
+/* Input field */
+.login-form .content .input {
+	width: 188px;
+	padding: 15px 25px;
+	
+	font-family: Arial, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #9d9e9e;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+	
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+}
+
+/* Second input field */
+.login-form .content .password, .login-form .content .pass-icon {
+	margin-top: 25px;
+}
+
+.login-form .content .input:hover {
+	background: #dfe9ec;
+	color: #414848;
+}
+
+.login-form .content .input:focus {
+	background: #dfe9ec;
+	color: #414848;
+	
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.user-icon, .pass-icon {
+	width: 46px;
+	height: 47px;
+	display: block;
+	position: absolute;
+	left: 0px;
+	padding-right: 2px;
+	z-index: -1;
+	
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+.user-icon {
+	top:153px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(img/user-icon.png) no-repeat center;	
+}
+
+.pass-icon {
+	top:201px;
+	background: rgba(65,72,72,0.75) url(img/pass-icon.png) no-repeat center;
+}
+
+.content input:focus + div{
+	left: -46px;
+}
+
+/* Animation */
+.input, .user-icon, .pass-icon, .button, .register {
+	transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-webkit-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+	-ms-transition: all 0.7s ease;
+}
+
+/*******************
+FOOTER
+*******************/
+
+.login-form .footer {
+	padding: 25px 30px 40px 30px;
+	overflow: auto;
+	
+	background: #d4dedf;
+	border-top: 1px solid #fff;
+	
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+}
+
+/* Login button */
+.login-form .footer .button {
+	float:right;
+	padding: 11px 25px;
+	
+	font-family: Arial, serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #fff;
+	text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+	
+	background: #0180cc;
+	border: 1px solid #3875c1;
+	border-radius: 5px;
+	cursor: pointer;
+	
+	box-shadow: inset 0 0 2px rgba(0,119,204,0.75);
+	-moz-box-shadow: inset 0 0 2px rgba(0,119,204,0.75);
+	-webkit-box-shadow: inset 0 0 2px rgba(0,119,204,0.75);
+}
+
+.login-form .footer .button:hover {
+	background: #0073b8;
+	border: 1px solid rgba(256,256,256,0.75);
+	
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.login-form .footer .button:focus {
+	position: relative;
+	bottom: -1px;
+	
+	background: #0e8ed8;
+	
+	box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+	-moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+	-webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+}
+
+/* Register button */
+.login-form .footer .register {
+	display: block;
+	float: right;
+	padding: 10px;
+	margin-right: 20px;
+	
+	background: none;
+	border: none;
+	cursor: pointer;
+	
+	font-family: Arial, serif;
+	font-weight: 300;
+	font-size: 18px;
+	color: #414848;
+	text-shadow: 0px 1px 0 rgba(256,256,256,0.5);
+}
+
+.login-form .footer .register:hover {
+	color: #3f72b8;
+}
+
+.login-form .footer .register:focus {
+	position: relative;
+	bottom: -1px;
+}
+
+/*****************
+ FORGET PASS
+****************/
+
+
+.login-form .forget-password {
+    padding: 20px 0px 30px 0px;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+    
+    border-top: 1px solid #fff;
+    background: #d4dedf;
+}
+/* Register button */
+.login-form .forget-password .fpassword{
+	display: block;
+	float: right;
+	padding: 0px;
+	margin-right: 10px;
+	
+	background: none;
+	border: none;
+	cursor: pointer;
+	
+	font-family: Arial, serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #414848;
+	text-shadow: 0px 1px 0 rgba(256,256,256,0.5);
+}
+
+.login-form .forget-password .fpassword:hover {
+	color: #3f72b8;
+}
+
+.login-form .forget-password .fpassword:focus {
+	position: relative;
+	bottom: -1px;
+}
+
+
+
+#mainwrapper {
+    width: 100%;
+    display: block;
+    
+    
+}
+#content-wrapper {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #1897d3;
+    box-shadow: inset 0px 1px 0 #fff;
+    min-height: 100%;
+    
+    
+    
+}
+
+/* Menu */
+#menu { 
+    	background: url(img/bg.png);
+        width: 100%; 
+        height:70px; 
+        font: bold 14px  Arial,Helvetica, sans-serif; 
+        border: 0px solid red; 
+        text-shadow: 0px 1px 0 rgba(0,0,0,0.5);
+        
+       
+}
+#menu ul li a, .menu ul li a:visited {
+    display:block; 
+    text-decoration:none; 
+    color:#710069; 
+    height:40px; 
+    color:#FFF;
+    ine-height:34px; 
+    overflow:hidden;  
+    padding: 0px 10px 0 10px; 
+    
+}
+#menu ul {padding:0; margin:20px; list-style: none; position: absolute; left: 50px;}
+#menu ul li {float:left; position:relative; padding-right: 12px; padding-left: 15px; padding-top: 0px; }
+#menu ul li:hover{ color:#FFF;}
+#menu ul li:hover a {color:#FFF;}
+
+.menustyle		{ margin-bottom:18px; padding-bottom:0; display:block; margin:0px auto 0px; color:#000000;}
+.menustyle span { 
+    text-transform: uppercase; 
+    padding: 4px 15px; 
+    margin-bottom: 0px; 
+    margin-top:0px; 
+    border-radius: 2px; 
+    -moz-border-radius: 2px; 
+    -webkit-border-radius: 2px; 
+    color :#fff; 
+    font-size:12px; 
+    font-weight: normal; 
+    letter-spacing: 2px; line-height: 22px; background:#3793da; display:block; margin:0px auto 0px; text-align:center;
+    box-shadow: inset 0px 1px 0 rgba(0,0,0,0.3);
+
+}
+.menustyle span:hover { 
+    text-transform: uppercase; 
+    padding: 4px 15px; 
+    margin-bottom: 0px; 
+    margin-top:0px; 
+    border-radius: 2px; 
+    -moz-border-radius: 2px; 
+    -webkit-border-radius: 2px; 
+    color :#fff; 
+    font-size:12px; 
+    font-weight: normal; 
+    letter-spacing: 2px; line-height: 22px; background:#3a9de9; display:block; margin:0px auto 0px; text-align:center;}
+/* Menu ends */
+
+
+/* main.jsp icons (+) and (-) to add and remove input forms*/
+.removeISP {
+    background: url(img/remove-icon.png) no-repeat;
+    min-height: 22px !important;
+    min-width: 22px !important;
+    position: fixed;
+}
+.removeISP:hover {
+    background: url(img/remove-icon-hover.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    position: fixed;
+}
+
+.addISP {
+    background: url(img/add-icon.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    position: fixed;
+    padding-left: 20px;
+    
+}
+.addISP:hover {
+    background: url(img/add-icon-hover.png) no-repeat;
+    
+    
+}
+
+.removeFirewall {
+    background: url(img/remove-icon.png) no-repeat;
+    min-height: 22px !important;
+    min-width: 22px !important;
+    position: fixed;
+}
+.removeFirewall:hover {
+    background: url(img/remove-icon-hover.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    position: fixed;
+}
+
+.addFirewall {
+    background: url(img/add-icon.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    position: fixed;
+    padding-left: 20px;
+    
+}
+.addFirewall:hover {
+    background: url(img/add-icon-hover.png) no-repeat;
+    
+    
+}
+
+.removeNetworkInfo {
+    background: url(img/remove-icon.png) no-repeat;
+    min-height: 22px !important;
+    min-width: 22px !important;
+    padding-left: 20px;
+}
+.removeNetworkInfo:hover {
+    background: url(img/remove-icon-hover.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+}
+
+.addNetworkInfo {
+    background: url(img/add-icon.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    padding-left: 20px;
+    
+}
+.addNetworkInfo:hover {
+    background: url(img/add-icon-hover.png) no-repeat;
+    
+    
+}
+
+.removeFirewallInfo {
+    background: url(img/remove-icon.png) no-repeat;
+    min-height: 22px !important;
+    min-width: 22px !important;
+    padding-left: 20px;
+}
+.removeFirewallInfo:hover {
+    background: url(img/remove-icon-hover.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+}
+
+.addFirewallInfo {
+    background: url(img/add-icon.png) no-repeat;
+    min-height: 22px;
+    min-width: 22px;
+    padding-left: 20px;
+    
+}
+.addFirewallInfo:hover {
+    background: url(img/add-icon-hover.png) no-repeat;
+    
+    
+}
+
+/* Add/remove (+) & (-) ENDS */
+
+/* Tables */
+.mainHeadTop
+{
+background-color: #1f57c9; color: white; font-weight: bold; height: 30px; padding-top: 10px; padding-left: 10px;
+}
+
+.mainHeadSub {
+    
+	width: 200px;
+	padding: 5px 5px;
+	font-family: Arial, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: white;
+        background: #316adc;
+	
+	
+	
+	border: 1px solid #fff;
+	border-radius: 0px;
+    
+}
+
+.input {
+    
+	width: 200px;
+	padding: 5px 5px;
+	
+	font-family: Arial, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+/*	color: #ff7200;*/
+/*	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);*/
+	
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.50);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.50);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.50);    
+    
+}
+
+/* Last input decoration */
+/*************
+  Display 
+*************/
+
+.displayHardware
+{
+    color: #ff7200;
+    width: 200px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    
+}
+
+.submitButton{
+    font-family: Arial, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #36a4c9;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    border: 1px solid #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.20); 
+    padding: 5px;
+    min-width: 140px;
+    border-radius: 5px;
+
+}
+.submitButton:hover{
+    color: #329abe;
+    text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    border: 1px solid #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.20); 
+    padding: 5px;
+    background: #e6eaec;
+    border-radius: 5px;
+}
+
+
+/* Table users  */
+
+.displayTable
+{
+    margin: 20px;
+    display: table;
+    
+}
+
+.displayRow
+{
+    display: table-row; 
+    color: #0095d3;
+}
+
+.displayCellHead
+{
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #fff;
+    background: #0578cc;
+    display: table-cell;
+    border: 1px solid #0d70b8;
+}
+
+.displayCell
+{
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 15px;
+    color: #0095d3;
+    display: table-cell;
+    
+}
+
+.displayCell a
+{
+    display: table-cell;
+    text-decoration:  none;
+    color: #0095d3;
+    font-weight:bold;
+    
+}
+
+/* Table Talachabee (main.jsp) */
+
+.displayTableMain
+{
+    margin: 0px;
+    display: table;
+    
+}
+
+.displayRowMain
+{
+    display: table-row; 
+    color: #0095d3;
+}
+
+.displayCellHeadMain
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    color: #fff;
+    background: #0578cc;
+    display: table-cell;
+    border: 1px solid #0d70b8;
+}
+
+.displayCellMain
+{
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    color: #0095d3;
+    display: table-cell;
+    
+}
+
+.displayCellMain a
+{
+    display: table-cell;
+    text-decoration:  none;
+    color: #0095d3;
+    font-weight:bold;
+    
+}
+
+
+/* Hardware edit decoration ENDS */
+
